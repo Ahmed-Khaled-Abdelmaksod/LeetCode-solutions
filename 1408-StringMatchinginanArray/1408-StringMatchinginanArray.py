@@ -4,18 +4,17 @@ class Solution(object):
         :type words: List[str]
         :rtype: List[str]
         """
-        soln = []
+        words.sort(key=len)
+        soln = set()
         for i in range(0,len(words)):
 
-            for j in range(0,len(words)):
-                if i == j:
-                    continue
+            for j in range(i+1,len(words)):
                 if len(words[i]) <= len(words[j]):
                    if words[i] in words[j]:
-                        soln.append(words[i])
+                        soln.add(words[i])
                         break
 
-        return list(set(soln))
+        return list(soln)
 
 
 
