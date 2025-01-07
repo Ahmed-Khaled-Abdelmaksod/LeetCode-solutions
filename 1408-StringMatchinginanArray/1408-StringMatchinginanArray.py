@@ -13,6 +13,7 @@ class Solution(object):
                 if len(words[i]) <= len(words[j]):
                    if words[i] in words[j]:
                         soln.append(words[i])
+                        break
 
         return list(set(soln))
 
